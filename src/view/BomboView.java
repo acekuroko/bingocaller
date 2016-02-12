@@ -5,6 +5,7 @@
  */
 package view;
 
+import Model.BomboModel;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -16,27 +17,23 @@ import javax.swing.JPanel;
  */
 public class BomboView extends JPanel{
     
-    private ImageIcon[] imageNum = new ImageIcon[75];
-    private JLabel[] jlBomboNumb = new JLabel[75];
+    private BomboModel bombo;
 
     public BomboView() {
+        bombo = new BomboModel();
+        
         this.setLayout(new GridLayout(15, 5));
-        for(int i = 0; i < 75; i++){
-            imageNum[i] = new ImageIcon(String.format("45x45\\"+(i+1)+".png"));
-            jlBomboNumb[i] = new JLabel(imageNum[i]);
-            //this.add(jlBomboNumb[i]);
-        }
+        
         for(int i = 0; i < 15; i++){
-            this.add(jlBomboNumb[i ]);
-            this.add(jlBomboNumb[i + 15]);
-            this.add(jlBomboNumb[i + 30]);
-            this.add(jlBomboNumb[i + 45]);
-            this.add(jlBomboNumb[i + 60]);
+            this.add(bombo.getBomboModel(i));
+            this.add(bombo.getBomboModel(i + 15));
+            this.add(bombo.getBomboModel(i + 30));
+            this.add(bombo.getBomboModel(i + 45));
+            this.add(bombo.getBomboModel(i + 60));
         }
     }
     
     public void setNewNumbImage (int num){
-        ImageIcon newImage = new ImageIcon("45x45b\\"+num+".png");
-        jlBomboNumb[num-1].setIcon(newImage);
+        bombo.getBomboModel(num-1).setIcon(new ImageIcon("45x45\\"+num+".png"));
     }
 }

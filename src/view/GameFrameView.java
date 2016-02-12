@@ -5,6 +5,7 @@
  */
 package view;
 
+
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -31,6 +32,7 @@ public class GameFrameView extends JFrame{
     private JPanel panel2 = new JPanel(new GridLayout(2,1));
     //TestCode to here
     public GameFrameView() {
+        
         this.setTitle("Bombo creator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new GridLayout(1, 2));
